@@ -3,6 +3,3 @@ uvicorn
 pydantic
 neo4j
 python-dotenv
-fastapi
-uvicorn[standard]
-pydantic
