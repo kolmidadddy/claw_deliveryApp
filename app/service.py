@@ -1,5 +1,5 @@
 from app.neo4j import driver
-from app.calender import create_calendar_event
+from app.calendar import create_calendar_event
 
 def create_delivery(data):
     query = """
