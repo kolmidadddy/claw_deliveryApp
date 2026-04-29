@@ -1,7 +1,18 @@
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
-SCOPES = ['https://www.googleapis.com/auth/calendar']
+SCOPES = [
+    'https://www.googleapis.com/auth/calendar',
+    'https://www.googleapis.com/auth/calendar.events',
+    'https://www.googleapis.com/auth/userinfo.profile',
+    'https://www.googleapis.com/auth/calendar.calendarlist',
+    'https://www.googleapis.com/auth/calendar.addons.execute',
+    'https://www.googleapis.com/auth/calendar.events.readonly',
+    'https://www.googleapis.com/auth/calendar.settings.readonly',
+    'https://www.googleapis.com/auth/calendar.calendars.readonly',
+    'https://www.googleapis.com/auth/calendar.events.owned.readonly',
+    'https://www.googleapis.com/auth/calendar.events.owned.readonly'
+]
 
 credentials = service_account.Credentials.from_service_account_file(
     'credentials.json', scopes=SCOPES
@@ -24,4 +35,4 @@ def create_calendar_event(data):
         },
     }
 
-    service.events().insert(calendarId='primary', body=event).execute()
+    service.events().insert(calendarId='manthalok@gmail.com', body=event).execute()
